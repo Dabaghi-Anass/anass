@@ -1,6 +1,7 @@
 const recbutton = document.getElementById('speechbutton');
 // const input = document.getElementById('spch');
-const chat = document.getElementById('chat')
+const chat = document.getElementById('chat');
+let wait = document.getElementById('wat');
 let chatmessages = ['press space to start chat'];
 let response;
 function refrech() {
@@ -14,10 +15,11 @@ function read(m) {
         refrech();
         res.text = response;
         res.lang = 'en-US';
-        window.speechSynthesis.speak(res)
-
+    window.speechSynthesis.speak(res)
+    wait.style.display = 'none';
 }
 function record() {
+    wait.style.display = 'flex';
     var recognition = new webkitSpeechRecognition();
     recognition.lang = 'en-GB';
     recognition.onresult = function (event) {

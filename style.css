@@ -22,8 +22,8 @@ body{
 }
 h2{
 	text-transform: uppercase;
-	text-shadow: 2px 2px cyan,
-	-2px -2px #ed85ce;
+	text-shadow: 1px 1px cyan,
+	-1px -1px #ed85ce;
 	font-size : calc(1rem + 50%);
 }
 
@@ -47,17 +47,13 @@ input{
 }
 .icon:hover{
 	background: #808080;
-	color: #e7ffd9;
-
+	color: #fbfbfb;
 }
 .icon:active,
 .icon:focus{
 	transform: scale(.8);
 }
-label{
-	display: flex;
-	max-width: 80%;
-}
+
 @font-face {
 	font-family: font-primary;
 	src: url(./KdamThmorPro-Regular.ttf);
@@ -95,4 +91,41 @@ label{
 		width: 100vw !important;
 	}
 
+}
+.waitc{
+	display: none;
+	margin-left: 20px;
+}
+.wait{
+	height: 15px;
+	width: 15px;
+	background-color: rgb(233, 30, 77);
+	margin-left: 5px;
+	border-radius: 50%;
+	animation: load alternate infinite 1000ms;
+}
+.wait:nth-child(1){
+	animation-delay: 900ms;
+}
+.wait:nth-child(2) {
+	animation-delay: 800ms;
+}
+.wait:nth-child(3) {
+	animation-delay: 700ms ;
+}
+label {
+	display: flex;
+	max-width: 80%;
+	align-items: center;
+	justify-content: space-between;
+}
+@keyframes load {
+	0%{
+		/* transform: translate(0,0); */
+		opacity: 0;
+	}
+		100% {
+			/* transform: translateY(20px); */
+			opacity: 100%;
+		}
 }
