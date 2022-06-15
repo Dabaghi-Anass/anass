@@ -1,0 +1,84 @@
+body{
+	background-color: #e7ffd9;
+	display: flex;
+	align-items: center;
+	font-family: font-primary;
+	justify-content: space-around;
+}
+.speech-container{
+	height: auto;
+	width: 100%;
+	padding: 2rem;
+	color: #808080;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	max-width: 500px;
+	background-color: rgba(27, 155, 214, 0.251);
+	border-radius: 20px;
+}
+h2{
+	text-transform: uppercase;
+	text-shadow: 3px 3px cyan,
+	-3px -3px #ed85ce;
+	font-size : calc(1rem + 50%);
+}
+input{
+	width: 80%;
+	height: 1rem;
+	border: none;
+	border-bottom : 1px solid limegreen;
+	outline: none;
+	padding: .6rem;
+	background: transparent;
+	font-family: helvetica,sans-serif;
+	text-align: center;
+}
+.icon{
+	font-size: 40px;
+	border-radius: 50%;
+	transition: .5s;
+	padding: .6rem;
+
+}
+.icon:hover{
+	background: #808080;
+	color: #e7ffd9;
+
+}
+.icon:active,
+.icon:focus{
+	transform: scale(.8);
+}
+label{
+	display: flex;
+	max-width: 80%;
+}
+@font-face {
+	font-family: font-primary;
+	src: url(./KdamThmorPro-Regular.ttf);
+}
+.chat{
+	background-color: rgba(27, 155, 214, 0.214);
+	padding: 2rem;
+	border-radius: 20px;
+	width: 40%;
+}
+.message{
+	background: white;
+	padding: 1rem;
+	font-size: 15px;
+	border-radius: 25px;
+	color: #5e5e5e;
+	width: fit-content;
+}
+.message:nth-child(n+2){
+	margin-top: -30px;
+}
+.message:nth-child(even){
+	background-color: #5ddfb6;
+	position: relative;
+	transform: translateX(-100%);
+	left: 100%;
+}
