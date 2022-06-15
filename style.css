@@ -22,8 +22,8 @@ body{
 }
 h2{
 	text-transform: uppercase;
-	text-shadow: 3px 3px cyan,
-	-3px -3px #ed85ce;
+	text-shadow: 2px 2px cyan,
+	-2px -2px #ed85ce;
 	font-size : calc(1rem + 50%);
 }
 
