@@ -9,6 +9,9 @@ function refrech() {
     chat.innerHTML = conversation;
 }
 function read(m) {
+    if (m === '') {
+        read("didn't hear anything")
+    }
         response = m;
         let res = new SpeechSynthesisUtterance;
         chatmessages.push(response);
