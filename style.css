@@ -1,6 +1,7 @@
 body{
-	background-color: #e21616;
+	background-color: #eaeaea;
 	display: flex;
+	gap: 1rem;
 	align-items: center;
 	font-family: font-primary;
 	justify-content: space-around;
@@ -14,7 +15,7 @@ body{
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-	max-width: 500px;
+	max-width: 45%;
 	background-color: rgba(27, 155, 214, 0.251);
 	border-radius: 20px;
 }
