@@ -40,16 +40,22 @@ function record() {
         }else if(rec.includes('say my full name')){
             read('anass dabaghi')
         }
-        else if(rec.includes('go to my facebook')){
+        else if(rec.includes('go to facebook')){
             read('ok hold on')
-            window.location.href = 'https://www.facebook.com/anass.debbaghi.12';
-        } else if(rec.includes('go to my instagram')){
+            window.location.href = 'https://www.facebook.com';
+        } else if(rec.includes('go to instagram')){
             read('ok hold on')
-            window.location.href = 'https://www.instagram.com/debbaghianass/';
+            window.location.href = 'https://www.instagram.com';
         }
-         else if(rec.includes('go to my linked')){
+         else if(rec.includes('go to linked in')){
             read('ok hold on')
             window.location.href = 'https://www.linkedin.com/in/anass-dabaghi-5a51141b6/';
+        }
+            else if(rec.includes('who created you')){
+            read('anass dabaghi, yes he is my creator, he created me to Avoid feeling lonely and sad')
+        }
+            else if(rec.includes('hi') || rec.includes('hello')){
+            read("hi there what's up")
         }
         else if(rec.includes('say my name')){
             read('anass')
