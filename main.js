@@ -1,5 +1,5 @@
 const recbutton = document.getElementById('speechbutton');
-const input = document.getElementById('spch');
+// const input = document.getElementById('spch');
 const chat = document.getElementById('chat')
 let chatmessages = ['press space to start chat'];
 let response;
@@ -66,7 +66,7 @@ function record() {
         else {
             read("sorry i didn't get that")
         }
-        input.value = rec;
+        // input.value = rec;
     }
     recognition.start(); 
 }
