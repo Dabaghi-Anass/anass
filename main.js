@@ -1,3 +1,6 @@
+let dialog = await fetch('./dialog.json').then(function (response) {
+    return response.json();
+});
 const recbutton = document.getElementById('speechbutton');
 // const input = document.getElementById('spch');
 const chat = document.getElementById('chat');
@@ -30,54 +33,12 @@ function record() {
         rec = rec.toLowerCase();
          chatmessages.push(rec);
         refrech();
-        if (rec.includes('time')) {
-            var d= new Date();
-            var h = d.getHours();
-            var m = d.getMinutes();
-        read(`it's ${h} and ${m} minutes`)
-        } else if(rec.includes('your name')){
-            read('my name is Anass and i am your assistant')
-        }else if(rec.includes('say my full name')){
-            read('anass dabaghi')
+        let { length } = dialog;
+        for (let i = 0; i <= length; i++) {
+            if (rec.includes(dialog[i].question)) {
+                read(dialog[i].answer)
+            }else if (i === length) {}
         }
-        else if(rec.includes('go to facebook')){
-            read('ok hold on')
-            window.location.href = 'https://www.facebook.com';
-        } else if(rec.includes('go to instagram')){
-            read('ok hold on')
-            window.location.href = 'https://www.instagram.com';
-        }
-         else if(rec.includes('go to linked in')){
-            read('ok hold on')
-            window.location.href = 'https://www.linkedin.com/in/anass-dabaghi-5a51141b6/';
-        }
-            else if(rec.includes('who created you')){
-            read('anass dabaghi, yes he is my creator, he created me to Avoid feeling lonely and sad')
-        }
-            else if(rec.includes('hi') || rec.includes('hello')){
-            read("hi there what's up")
-        }
-        else if(rec.includes('say my name')){
-            read('anass')
-        }
-         else if(rec.includes('go to youtube')){
-            read('ok hold on')
-            window.location.href = 'https://www.youtube.com';
-        }
-        else if (rec.includes('say')) {
-            rec = rec.substr(4)
-            read(rec)
-        }
-         else if(rec.includes("what's up")){
-            read("i am a robot i don't feel but i am good if you are interested")
-        }
-            else if(rec.includes("you are useless")){
-            read("the only useles thing in the world is you")
-        }
-        else {
-            read("sorry i didn't get that")
-        }
-        // input.value = rec;
     }
     recognition.start(); 
 }
@@ -88,4 +49,55 @@ window.addEventListener('keypress', (e) => {
     }
 })
 
+// const fs = require('fs');
+// const saveData = (question) => {
+//     const finished = (error) => { 
+//         if (error) {
+//             console.error(error);
+//             return;
+//         }
+//     };
+//     const jsonData = JSON.stringify(question,null,2);
+//     fs.writeFile('dog.json', jsonData,finished)
+// }
 
+// else if (rec.includes('your name')) {
+//     read('my name is Anass and i am your assistant')
+// }else if(rec.includes('say my full name')){
+//     read('anass dabaghi')
+// }
+// else if(rec.includes('go to facebook')){
+//     read('ok hold on')
+//     window.location.href = 'https://www.facebook.com';
+// } else if(rec.includes('go to instagram')){
+//     read('ok hold on')
+//     window.location.href = 'https://www.instagram.com';
+// }
+//  else if(rec.includes('go to linked in')){
+//     read('ok hold on')
+//     window.location.href = 'https://www.linkedin.com/in/anass-dabaghi-5a51141b6/';
+// }
+//     else if(rec.includes('hi') || rec.includes('hello')){
+//     read("hi there what's up")
+// }
+// else if(rec.includes('say my name')){
+//     read('anass')
+// }
+//  else if(rec.includes('go to youtube')){
+//     read('ok hold on')
+//     window.location.href = 'https://www.youtube.com';
+// }
+// else if (rec.includes('say')) {
+//     rec = rec.substr(4)
+//     read(rec)
+// }
+//  else if(rec.includes("what's up")){
+//     read("i am a robot i don't feel but i am good if you are interested")
+// }
+//     else if(rec.includes("you are useless")){
+//     read("the only useles thing in the world is you")
+// }
+// else {
+//     read("sorry i didn't get that")
+// }
+// getData();
