@@ -10,8 +10,16 @@
 </head>
 
 <body>
+   <nav class="nav-bar"> 
+      <div class="nav-bar-brand">
+         <a href="#">ANASS BOT</a>
+      </div>
+      <ul class="list">
+         <li class="list-item"><a href="./settings.html"><ion-icon class="settings-button" name="settings-outline"></ion-icon></a></li>
+      </ul>
+   </nav>
    <div class="speech-container">
-      <h2>try to say what's up</h2>
+      <h2 class="titre">try to say what's up</h2>
       <label>
          <!-- <input type="text" id="spch" x-webkit-speech placeholder="try speak something..."> -->
          <ion-icon class="icon" id="speechbutton" name="mic-outline"></ion-icon>
@@ -23,9 +31,9 @@
       </label>
    </div>
    <div id="chat" class="chat">
+
    </div>
    <script type="module" src="./main.js"></script>
-   
    
    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

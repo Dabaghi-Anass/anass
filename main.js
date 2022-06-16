@@ -2,22 +2,19 @@ let dialog = await fetch('./dialog.json').then(function (response) {
     return response.json();
 });
 const recbutton = document.getElementById('speechbutton');
-// const input = document.getElementById('spch');
 const chat = document.getElementById('chat');
 let wait = document.getElementById('wat');
-let chatmessages = ['press space to start chat'];
+let conversation = [];
 let response;
 function refrech() {
-    let conversation = chatmessages.map(e => `<h3 class="message">${e}</h3>`);
-    chat.innerHTML = conversation;
+    chat.innerHTML = conversation.map(e => e)
 }
 function read(m) {
-    if (m === '') {
-        read("didn't hear anything")
-    }
         response = m;
-        let res = new SpeechSynthesisUtterance;
-        chatmessages.push(response);
+    let res = new SpeechSynthesisUtterance;
+    if (response.length > 0) {
+        conversation.push(`<h3 class="conversation answer">${response}</h3>`);
+    }
         refrech();
         res.text = response;
         res.lang = 'en-US';
@@ -31,15 +28,31 @@ function record() {
     recognition.onresult = function (event) {
         let rec = event.results[0][0].transcript;
         rec = rec.toLowerCase();
-         chatmessages.push(rec);
+         conversation.push(`<h2 class="conversation message">${rec}</h2>`);
         refrech();
-        let { length } = dialog;
-        for (let i = 0; i <= length; i++) {
+        if (rec.includes('time')) { 
+            let time = new Date();
+            let h = time.getHours();
+            let m = time.getMinutes();
+            if (h > 12) {
+                h = h - 12;
+                h = h + ' pm';
+            }
+            else {
+                h = h + 'am'
+            }
+            read(`it's ${h} and ${m} minutes`)
+        }
+        for (let i = 0; i < dialog.length; i++) {
             if (rec.includes(dialog[i].question)) {
-                read(dialog[i].answer)
-            }else if (i === length) {}
+                read(dialog[i].answer);
+                return;
+            } else if (i === dialog.length - 1 && !rec.includes(dialog[i].question)){
+                read("sorry i didn't recognize this")
+            }
         }
     }
+
     recognition.start(); 
 }
 recbutton.addEventListener('click', record)
@@ -48,18 +61,6 @@ window.addEventListener('keypress', (e) => {
         record()
     }
 })
-
-// const fs = require('fs');
-// const saveData = (question) => {
-//     const finished = (error) => { 
-//         if (error) {
-//             console.error(error);
-//             return;
-//         }
-//     };
-//     const jsonData = JSON.stringify(question,null,2);
-//     fs.writeFile('dog.json', jsonData,finished)
-// }
 
 // else if (rec.includes('your name')) {
 //     read('my name is Anass and i am your assistant')
