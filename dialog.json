@@ -18,5 +18,13 @@
     ,{
         "question" : "time",
         "answer" : ""
+    },
+    {
+        "question" : "what's up",
+        "answer" : "i'm good what about you?"
+    },
+    {
+        "question" : "what's your iq level",
+        "answer" : "not hight but better than you"
     }
 ]
