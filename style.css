@@ -115,7 +115,7 @@ input{
 }
 label {
 	display: flex;
-	max-widqq,th: 80%;
+	max-width: 80%;
 	align-items: center;
 	justify-content: space-between;
 }
