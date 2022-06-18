@@ -24,7 +24,16 @@
         "answer" : "i'm good what about you?"
     },
     {
-        "question" : "what's your iq level",
+        "question" : "what's your iq",
         "answer" : "not hight but better than you"
+    }
+    ,
+    {
+        "question" : "my best friend",
+        "answer" : "you are home alone, you don't have one yet"
+    },
+    {
+        "question" : "my girlfriend",
+        "answer" : "you don't have one yet,poor man"
     }
 ]
